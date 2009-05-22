@@ -26,7 +26,7 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
 end
 
 NAME              = ENV["GEMNAME"] || "skip_embedded"
-AUTHOR            = "MOROHASHI Kyosuke"
+AUTHORS           = ["MAEDA Naoki", "MOROHASHI Kyosuke"]
 EMAIL             = "k-morohashi@esm.co.jp"
 DESCRIPTION       = "Utilities to collabolate SKIP, opensource buisiness SNS."
 HOMEPATH          = "http://github.com/openskip/skip_embedded/tree/master"
@@ -52,7 +52,7 @@ spec = Gem::Specification.new do |s|
   s.rdoc_options     += RDOC_OPTS + ['--exclude', '^(examples|extras)/']
   s.summary           = DESCRIPTION
   s.description       = DESCRIPTION
-  s.author            = AUTHOR
+  s.authors           = AUTHORS
   s.email             = EMAIL
   s.homepage          = HOMEPATH
   s.executables       = BIN_FILES
@@ -61,6 +61,8 @@ spec = Gem::Specification.new do |s|
   s.test_files        = Dir["spec/**/*_spec.rb"]
 
   s.add_dependency "moro-repim", ">=0.1.4"
+  s.add_dependency "json"
+  s.add_dependency "oauth"
 
   s.files = %w(README.rdoc ChangeLog Rakefile) +
     Dir.glob("{bin,doc,test,lib,templates,generators,extras,website,script}/**/*") + 
