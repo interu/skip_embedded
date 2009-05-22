@@ -11,6 +11,7 @@ class SkipEmbeddedGenerator < Rails::Generator::Base
         public/javascripts/dropdown_navigation.js
         public/javascripts/labeled_text_field.js
         public/javascripts/skip_fckeditor_config.js
+        public/javascripts/flash_message.js
       ]
 
       assets.map{|asset| File.dirname(asset) }.uniq.each{|asset| m.directory(asset) }
