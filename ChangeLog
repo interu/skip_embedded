@@ -1,3 +1,6 @@
+== 0.9.4  / 2009-05-22
+* [new] update flash showing mechanism.
+
 == 0.9.3  / 2009-05-22
 * [new] 'skip_embedded_stylesheets' generator. extracted from main generator.
 * [new] client library for SKIP RP services(wiki, etc..).
