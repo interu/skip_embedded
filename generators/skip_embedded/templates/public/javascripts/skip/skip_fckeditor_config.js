@@ -1,5 +1,4 @@
-
-FCKConfig.EditorAreaCSS = FCKConfig.BasePath + '../../../stylesheets/application.css' ;
+FCKConfig.EditorAreaCSS = FCKConfig.BasePath + '../../../../stylesheets/editor_area.css' ;
 
 FCKConfig.Plugins.Add( 'autogrow' ) ;
 FCKConfig.Plugins.Add( 'dragresizetable' );

@@ -10,7 +10,7 @@ class SkipEmbeddedGenerator < Rails::Generator::Base
         public/blank.html
         public/javascripts/dropdown_navigation.js
         public/javascripts/labeled_text_field.js
-        public/javascripts/skip_fckeditor_config.js
+        public/javascripts/skip/skip_fckeditor_config.js
         public/javascripts/flash_message.js
       ]
 

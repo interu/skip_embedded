@@ -6,10 +6,12 @@ class SkipEmbeddedStylesheetsGenerator < Rails::Generator::Base
         public/stylesheets/skip_embedded.css
         public/stylesheets/skip_footer.css
         public/stylesheets/skip_header.css
+        public/stylesheets/editor_area.css
         public/stylesheets/sass/skip_base.sass
         public/stylesheets/sass/skip_embedded.sass
         public/stylesheets/sass/skip_footer.sass
         public/stylesheets/sass/skip_header.sass
+        public/stylesheets/sass/editor_area.sass
         public/stylesheets/sprites/sprites.css
         public/stylesheets/sprites/sprites.png
       ]
