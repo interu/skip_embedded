@@ -70,6 +70,7 @@ module SkipEmbedded
       def setup_https(uri)
         returning Net::HTTP.new(uri.host, uri.port) do |http|
           if uri.scheme == "https"
+            http.use_ssl = true
             if @ca_file
               http.ca_file = @ca_file
               http.verify_mode = OpenSSL::SSL::VERIFY_PEER
