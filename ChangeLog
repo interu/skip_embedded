@@ -1,3 +1,6 @@
+== 0.9.6  / 2009-05-29
+* fixup skip_rp using ssl
+
 == 0.9.5  / 2009-05-27
 * [port] SKIP's upload file validations.
 
