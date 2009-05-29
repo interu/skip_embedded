@@ -75,7 +75,7 @@ module SkipEmbedded
               http.verify_mode = OpenSSL::SSL::VERIFY_PEER
               http.verify_depth = 5
             else
-              http.verify_mode = OpenSSL::SSL::NONE
+              http.verify_mode = OpenSSL::SSL::VERIFY_NONE
             end
           end
         end
