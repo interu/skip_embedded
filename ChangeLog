@@ -1,3 +1,6 @@
+== 0.9.7  / 2009-06-04
+* fixed GET request problem when OAuth request
+
 == 0.9.6  / 2009-05-29
 * fixup skip_rp using ssl
 

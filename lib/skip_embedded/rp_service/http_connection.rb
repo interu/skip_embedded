@@ -44,12 +44,12 @@ module SkipEmbedded
       private
       def request_api_via_oauth(method, url, data, token, headers = {}, parse_json=true)
         url = url.is_a?(URI) ? url : URI(url)
-        req = (case method
-               when :post then Net::HTTP::Post
-               when :put  then Net::HTTP::Put
-               when :delete  then Net::HTTP::Delete
-               else Net::HTTP::Get
-               end).new(url.path)
+        req = case method
+              when :post then Net::HTTP::Post.new(url.path)
+              when :put  then Net::HTTP::Put.new(url.path)
+              when :delete  then Net::HTTP::Delete.new(url.path)
+              else Net::HTTP::Get.new(url.request_uri)
+              end
         req["Content-Type"] = "application/json"
         headers.each{|k,v| req[k] = v }
 
