@@ -121,19 +121,6 @@ module SkipEmbedded
           WebServiceUtil.get_json(@url).should be_nil
         end
       end
-      describe "ホストの無いURLが渡された場合" do
-        before do
-          @url = "/services/user_info?user_code=user"
-        end
-        it "nilが返ること" do
-          @logger.stub!(:error)
-          WebServiceUtil.get_json(@url).should be_nil
-        end
-        it "ログが出力されること" do
-          @logger.should_receive(:error).with(/[WebServiceUtil Error] .*/)
-          WebServiceUtil.get_json(@url).should be_nil
-        end
-      end
       describe "レスポンスが404の場合" do
         before do
           @url = "/services/user_info?user_code=user"
