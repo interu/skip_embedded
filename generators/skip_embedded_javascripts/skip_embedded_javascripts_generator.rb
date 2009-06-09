@@ -6,6 +6,7 @@ class SkipEmbeddedJavascriptsGenerator < Rails::Generator::Base
         public/javascripts/skip_embedded/dropdown_navigation.js
         public/javascripts/skip_embedded/labeled_text_field.js
         public/javascripts/skip_embedded/flash_message.js
+        public/javascripts/skip_embedded/iframe_upload.js
         public/javascripts/skip_embedded/skip_fckeditor_config.js
       ]
 
