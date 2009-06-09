@@ -1,6 +1,6 @@
 # SkipEmbedded
 module SkipEmbedded
-  Version = "0.9.8"
+  Version = "0.9.9"
 
   Dependencies = {:jquery => "jquery-1.3.2.min.js"}
 end

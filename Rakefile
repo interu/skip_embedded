@@ -26,8 +26,8 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
 end
 
 NAME              = ENV["GEMNAME"] || "skip_embedded"
-AUTHORS           = ["MAEDA Naoki", "MOROHASHI Kyosuke"]
-EMAIL             = "k-morohashi@esm.co.jp"
+AUTHORS           = ["MAEDA Naoki", "MOROHASHI Kyosuke", "MATSUMURA Akihiro"]
+EMAIL             = "info@openskip.org"
 DESCRIPTION       = "Utilities to collabolate SKIP, opensource buisiness SNS."
 HOMEPATH          = "http://github.com/openskip/skip_embedded/tree/master"
 BIN_FILES         = %w(skip-gen)
@@ -65,7 +65,7 @@ spec = Gem::Specification.new do |s|
   s.add_dependency "oauth"
 
   s.files = %w(README.rdoc ChangeLog Rakefile) +
-    Dir.glob("{bin,doc,test,lib,templates,generators,extras,website,script}/**/*") + 
+    Dir.glob("{bin,doc,test,lib,templates,generators,extras,website,script}/**/*") +
     Dir.glob("spec/**/*.rb") +
     Dir.glob("ext/**/*.{h,c,rb}") +
     Dir.glob("examples/**/*.rb") +
