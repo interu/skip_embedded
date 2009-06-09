@@ -15,7 +15,7 @@
     <%= submit_tag _('Search') %>
   <% end -%>
 
-  <% javascript_tag do %>
+  <% content_for :javascript_initializer do %>
     jQuery(function(){
       jQuery("#search input.labeled-field").labeledTextField(<%= {:message => search_label}.to_json %>);
     });

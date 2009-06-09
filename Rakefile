@@ -63,6 +63,7 @@ spec = Gem::Specification.new do |s|
   s.add_dependency "moro-repim", ">=0.1.7"
   s.add_dependency "json"
   s.add_dependency "oauth"
+  s.add_dependency 'haml'
 
   s.files = %w(README.rdoc ChangeLog Rakefile) +
     Dir.glob("{bin,doc,test,lib,templates,generators,extras,website,script}/**/*") +

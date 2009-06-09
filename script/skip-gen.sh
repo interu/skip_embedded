@@ -48,12 +48,13 @@ diff --git a/skip-sample/config/environment.rb b/skip-sample/config/environment.
 index a0fb06a..bda6d11 100644
 --- a/skip-sample/config/environment.rb
 +++ b/skip-sample/config/environment.rb
-@@ -25,6 +25,8 @@ Rails::Initializer.run do |config|
+@@ -25,6 +25,9 @@ Rails::Initializer.run do |config|
    # config.gem "bj"
    # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
    # config.gem "aws-s3", :lib => "aws/s3"
 +  config.gem 'moro-repim', :lib => 'repim', :source => 'http://gems.github.com/'
 +  config.gem 'openskip-skip_embedded', :lib => 'skip_embedded', :source => 'http://gems.github.com/'
++  config.gem 'haml'
  
    # Only load the plugins named here, in the order given. By default, all plugins 
    # in vendor/plugins are loaded in alphabetical order.
@@ -64,4 +65,3 @@ rake skip_embedded:thirdparty
 rm app/views/layouts/sessions.html.erb public/index.html
 
 cd -
-

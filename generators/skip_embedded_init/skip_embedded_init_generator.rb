@@ -3,17 +3,18 @@ class SkipEmbeddedInitGenerator < Rails::Generator::Base
     record do |m|
       assets = %w[
         app/views/layouts/skip_embedded.html.erb
+        app/views/shared/_common_header.html.erb
+        app/views/shared/_footer.html.erb
+        app/views/shared/_header.html.erb
         app/views/shared/_flash_message.html.erb
         app/views/shared/_skip_full_text_search_form.html.erb
         config/initial_settings.yml
         lib/tasks/skip_embedded.rake
+        public/images/footer_logo.png
       ]
 
       assets.map{|asset| File.dirname(asset) }.uniq.each{|asset| m.directory(asset) }
       assets.each{|asset| m.file asset, asset }
-
-      m.dependency('skip_embedded_javascripts', [])
-      m.dependency('skip_embedded_stylesheets', [])
 
       insert_application_helper(m)
       insert_application_controller(m)

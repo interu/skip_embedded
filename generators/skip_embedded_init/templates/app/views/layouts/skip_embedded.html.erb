@@ -1,62 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Script-Type" content="text/javascript" />
-  <link rel="shortcut icon" href="<%= controller.request.relative_url_root %>/favicon.ico" />
+  <head>
+    <%= render :partial => 'shared/common_header' %>
+  </head>
+  <body>
+    <%= render :partial => "shared/header" %>
+    <%= render :partial => "shared/flash_message" %>
 
-  <%= stylesheet_link_tag("skip_embedded") %>
-  <%= stylesheet_link_tag("sprites/sprites") %>
-
-  <%= yield :stylesheet %>
-  <%= javascript_include_tag(:jquery) %>
-</head>
-<body>
-  <div id="header">
-    <div id="logo">
-      <span class="app-name">SKIIP ---INSERT YOUR APP NAME---</span>
-    </div>
-
-    <div id="menu">
-      <% if signed_in? -%>
-        <div class="item" style="color: black;">
-          <%=h current_user.identity_url %>
-        </div>
-        <div class="item"><%= link_to "自分の管理", user_path(current_user) %></div>
-        <div class="item"><a href="FIXME" target="_blank">ヘルプ</a></div>
-        <div class="item"><%= link_to "ログアウト", signout_url %></div>
-      <% else %>
-        <div class="item"><%= link_to "ログイン", signin_url %></div>
-      <% end %>
-      <br style="clear: left" />
-
-    </div>
-    <% if SkipEmbedded::InitialSettings["skip_collaboration"]["fulltext_search"] -%>
-      <%= render(:partial => "shared/skip_full_text_search_form") %>
-    <% end -%>
-  </div>
-  <%=  render :partial=>"shared/flash_message" %>
-
-  <div id="main">
-    <div id="tab_body">
+    <div id="main">
       <%= yield %>
     </div>
-  </div>
 
-  <div id="footer">
-    <div class="info">
-      <div class="first">footer-first</div>
-      <div class="second">footer-second</div>
-    </div>
-    <div class="powered_by">powered by </div>
-  </div>
-</body>
-<%= javascript_include_tag(:skip) %>
-<% javascript_tag do -%>
-jQuery(function(){
-  <%= yield :javascript_initializer %>
-});
-<% end -%>
+    <%= render :partial => "shared/footer" %>
+    <%= javascript_include_tag :jquery %>
+    <%= javascript_include_tag :skip_embedded, :cache => "skip_embedded" %>
+    <%= javascript_include_tag(URI.join(SkipEmbedded::InitialSettings["skip_collaboration"]["skip_url"], "services/skip_header.js").to_s) if SkipEmbedded::InitialSettings["skip_collaboration"]["skip_url"] %>
+    <%= yield :javascript_includes %>
+    <% javascript_tag do -%>
+      jQuery(function(){
+        <%= yield :javascript_initializer %>
+      });
+    <% end -%>
+  </body>
 </html>
-

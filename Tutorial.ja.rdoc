@@ -43,16 +43,6 @@ skip_embeddedジェネレータは、SKIP風のレイアウトも生成します
 
 画面を再読込すると、SKIP風のレイアウトが適用されます。
 
-== AX連携
-SSO時に、ユーザ情報をOPから、Attribute Exchangeで受け取ることができます。
-app/controllers/sessions_controller.rb に次のように記述します。
-
- use_attribute_exchange(["http://axschema.org", "http://schema.openid.net"],
-                        :display_name => "/namePerson", :name => "/namePerson/friendly" )
-
-すると、サインアップ時にOPからAttribute Exchangeで情報を受け取ることができます。この状態でOPと認証を行うと、サインアップフォームに受け取った値がはじめから入っている状態になります。
-また、同じ情報がsessionに入っているため、受け取った情報をユーザに編集させたくない場合はこちらの値を使います。
-
 == 全文検索連携
 SKIPの全文検索と連携するためのキャッシュも簡単に生成できます
 
@@ -62,12 +52,12 @@ SKIPの全文検索と連携するためのキャッシュも簡単に生成で�
    desc "build fulltext search cache DIR=[cache_root] SINCE=[sec target updated]"
    task :fulltext_cache do
      require "skip_embedded/fulltext_search_cache"
- 
+
      options = {}
      options[:cache_dir] = ENV["DIR"] unless ENV["DIR"].blank?
      options[:since] = ENV["SINCE"] unless ENV["SINCE"].blank?
      options[:url_prefix] = ENV["URL"] unless ENV["URL"].blank?
- 
+
      SkipEmbedded::FulltextSearchCache.build({ Todo => TodoCacheBuilder}, options)
    end
  end
@@ -76,13 +66,13 @@ SKIPの全文検索と連携するためのキャッシュも簡単に生成で�
 
  require "todo"
  require 'skip_embedded/fulltext_search_cache/builder_base'
- 
+
  class TodoCacheBuilder < SkipEmbedded::FulltextSearchCache::BuilderBase
    self.entity_name = "todo"
- 
+
    def title; ERB::Util.h(todo.title) ; end
    def body;  ERB::Util.h(todo.title) ; end
- 
+
    def to_meta
      publicities = ["todo:#{todo.id}"]
      {

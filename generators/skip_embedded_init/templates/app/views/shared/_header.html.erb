@@ -1,0 +1,23 @@
+<div id="header">
+  <div id="global_top">
+    <div id="application_link">
+    </div>
+    <div id="menu">
+      <% if signed_in? -%>
+        <%=h current_user.identity_url %>|
+        <%= link_to "自分の管理", user_path(current_user) %>|
+        <%= link_to "ログアウト", signout_url %>
+      <% else %>
+        <%= link_to "ログイン", signin_url %>
+      <% end %>
+      <br style="clear: left" />
+    </div>
+  </div>
+  <div id="logo">
+    <span class="app-name">SKIP ---INSERT YOUR APP NAME---</span>
+  </div>
+  <div class="banner"></div>
+  <% if SkipEmbedded::InitialSettings["skip_collaboration"]["fulltext_search"] -%>
+    <%= render(:partial => "shared/skip_full_text_search_form") %>
+  <% end -%>
+</div>
