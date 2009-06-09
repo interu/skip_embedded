@@ -14,15 +14,17 @@
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 module SkipEmbedded
-  module Types::ContentType
-    CONTENT_TYPE_IMAGES = {
-      :jpg  => 'image/jpg,image/jpeg,image/pjpeg',
-      :jpeg => 'image/jpg,image/jpeg,image/pjpeg',
-      :png  => 'image/png,image/x-png',
-      :gif  => 'image/gif',
-      :bmp  => 'image/bmp'
-    }.freeze
+  module Types
+    module ContentType
+      CONTENT_TYPE_IMAGES = {
+        :jpg  => 'image/jpg,image/jpeg,image/pjpeg',
+        :jpeg => 'image/jpg,image/jpeg,image/pjpeg',
+        :png  => 'image/png,image/x-png',
+        :gif  => 'image/gif',
+        :bmp  => 'image/bmp'
+      }.freeze
 
-    DEFAULT_CONTENT_TYPE = "application/octet-stream"
+      DEFAULT_CONTENT_TYPE = "application/octet-stream"
+    end
   end
 end
