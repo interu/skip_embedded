@@ -1,6 +1,6 @@
 <%
   skip_url = SkipEmbedded::InitialSettings["skip_collaboration"]["skip_url"]
-  endpoint = URI.join(skip_url, "/search/full_text_search")
+  endpoint = URI.join(skip_url, "/search/full_text_search").to_s
   query_name = 'full_text_query'
   search_label = _("Input keyword to search")
 %>
@@ -10,11 +10,8 @@
     <%= text_field_tag(query_name, search_label, :class => "labeled-field", :size => 40) %>
     <%= submit_tag _('Search') %>
   <% end -%>
-
-  <% content_for :javascript_initializer do %>
-    jQuery(function(){
-      jQuery("#search input.labeled-field").labeledTextField(<%= {:message => search_label}.to_json %>);
-    });
-  <% end %>
 </div>
 
+<% content_for :javascript_initializer do -%>
+  jQuery("#search input.labeled-field").labeledTextField(<%= {:message => search_label}.to_json %>);
+<% end -%>
