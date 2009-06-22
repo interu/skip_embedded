@@ -10,8 +10,8 @@ describe SkipEmbedded::OpFixation, "http://openid.example.comで擬似SSOをす�
     SkipEmbedded::OpFixation.skip_url.should == "http://openid.example.com/"
   end
 
-  it "sso_openid_logout_urlは@server_endpoint_url + '/logout'であること" do
-    SkipEmbedded::OpFixation.sso_openid_logout_url.should == "http://openid.example.com/logout"
+  it "skip_logout_urlは@server_endpoint_url + '/logout'であること" do
+    SkipEmbedded::OpFixation.skip_logout_url.should == "http://openid.example.com/logout"
   end
 end
 

@@ -8,7 +8,7 @@ module SkipEmbedded
 
       private
       def after_logout_path
-        OpFixation.sso_openid_logout_url || login_path
+        OpFixation.skip_logout_url || login_path
       end
 
       def login_successfully(user, personal_data)

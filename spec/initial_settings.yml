@@ -2,12 +2,3 @@ test:
   skip_collaboration:
     secret_key: "hogehogehogehoge"
     skip_url: "http://test.openskip.org"
-    fulltext_search:
-      endpoint:  "/test.openskip.org/search/full_text_search"
-      query_name: "full_text_query"
-    fixed_op:
-      disabled: true
-      fixed_openid_server_url: "http://www.myopenid.com"
-      acceptable_op_urls:
-      - "http://localhost:3200/server"
-

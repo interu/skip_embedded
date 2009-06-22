@@ -14,7 +14,7 @@ module SkipEmbedded
       new(@@skip_url).accept?(claimed_url)
     end
 
-    def self.sso_openid_logout_url
+    def self.skip_logout_url
       URI.join(skip_url, "logout").to_s if skip_url
     end
 
