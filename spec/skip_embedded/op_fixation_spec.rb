@@ -3,11 +3,11 @@ require 'skip_embedded/op_fixation'
 
 describe SkipEmbedded::OpFixation, "http://openid.example.comで擬似SSOをする場合", :type => :model do
   before() do
-    SkipEmbedded::OpFixation.sso_openid_provider_url = "http://openid.example.com/"
+    SkipEmbedded::OpFixation.skip_url = "http://openid.example.com/"
   end
 
-  it "sso_openid_provider_urlは@server_endpoint_urlであること" do
-    SkipEmbedded::OpFixation.sso_openid_provider_url.should == "http://openid.example.com/"
+  it "skip_urlは@server_endpoint_urlであること" do
+    SkipEmbedded::OpFixation.skip_url.should == "http://openid.example.com/"
   end
 
   it "sso_openid_logout_urlは@server_endpoint_url + '/logout'であること" do
@@ -18,7 +18,7 @@ end
 describe SkipEmbedded::OpFixation, "[http://openid.example.com]を受け付ける場合", :type => :model do
   before(:all) do
     @server_endpoint_url = "http://openid.example.com/server"
-    SkipEmbedded::OpFixation.servers = @server_endpoint_url
+    SkipEmbedded::OpFixation.skip_url = @server_endpoint_url
   end
 
   describe "OpenID.discoverのOP endpoint URLがhttp://openid.example.comの場合" do
@@ -43,15 +43,5 @@ describe SkipEmbedded::OpFixation, "[http://openid.example.com]を受け付け�
     it "http://not-registered.example.com/alice/での問い合わせは許可しないこと" do
       SkipEmbedded::OpFixation.accept?("http://not-registered.example.com/alice/").should be_false
     end
-  end
-end
-
-describe SkipEmbedded::OpFixation, "serversを指定しない場合", :type => :model do
-  before(:all) do
-    SkipEmbedded::OpFixation.servers = []
-  end
-
-  it "http://not-registered.example.com/alice/での問い合わせを許可すること" do
-    SkipEmbedded::OpFixation.accept?("http://not-registered.example.com/alice/").should be_true
   end
 end

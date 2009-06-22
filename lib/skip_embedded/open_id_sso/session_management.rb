@@ -31,7 +31,7 @@ module SkipEmbedded
 
       def available_op_limitation
         if params[:openid_url] && !OpFixation.accept?(params[:openid_url])
-          logger.debug("login refused since #{params[:openid_url]} is not member #{OpFixation.servers.inspect}")
+          logger.debug("login refused since #{params[:openid_url]} is not skip_url")
           authenticate_failure
         elsif OpFixation.sso_enabled? && !params["open_id_complete"].blank? && (params["openid.identity"] != params["openid.claimed_id"])
           logger.debug("login refused since claimed_id differs from identity.")

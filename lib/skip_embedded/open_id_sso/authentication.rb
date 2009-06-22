@@ -7,7 +7,7 @@ module SkipEmbedded
 
       private
       def access_denied_with_open_id_sso(message = nil)
-        if op = SkipEmbedded::OpFixation.sso_openid_provider_url
+        if op = SkipEmbedded::OpFixation.skip_url
           store_location
           options = {:method => "post", :return_to => session_url}
           if attr_adapter = SessionsController.attribute_adapter

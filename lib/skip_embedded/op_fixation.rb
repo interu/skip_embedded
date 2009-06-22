@@ -3,26 +3,19 @@ require 'skip_embedded/initial_settings'
 
 module SkipEmbedded
   class OpFixation
-    cattr_accessor :servers, :sso_openid_provider_url
-
-    def self.accept?(claimed_url)
-      servers.empty? || new(*servers).accept?(claimed_url)
-    end
+    cattr_accessor :skip_url
+    @@skip_url = InitialSettings['skip_collaboration']['skip_url']
 
     def self.sso_enabled?
-      @@config && !@@config["disabled"]
+      !!@@skip_url
+    end
+
+    def self.accept?(claimed_url)
+      new(@@skip_url).accept?(claimed_url)
     end
 
     def self.sso_openid_logout_url
-      URI.join(sso_openid_provider_url, "logout").to_s if sso_openid_provider_url
-    end
-
-    @@config = InitialSettings['skip_collaboration']['fixed_op']
-    if sso_enabled?
-      @@servers = @@config["acceptable_op_urls"]
-      @@sso_openid_provider_url = @@config["fixed_openid_server_url"]
-    else
-      @@servers, @@sso_openid_provider_url = [], nil
+      URI.join(skip_url, "logout").to_s if skip_url
     end
 
     def initialize(*allowed)
