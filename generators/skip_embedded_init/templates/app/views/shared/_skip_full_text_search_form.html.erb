@@ -1,12 +1,8 @@
 <%
-  config = SkipEmbedded::InitialSettings["skip_collaboration"]["fulltext_search"]
-  endpoint = config["endpoint"]
-  query_name = config["full_text_query"]
+  skip_url = SkipEmbedded::InitialSettings["skip_collaboration"]["skip_url"]
+  endpoint = URI.join(skip_url, "/search/full_text_search")
+  query_name = 'full_text_query'
   search_label = _("Input keyword to search")
-
-  unless endpoint =~ /\Ahttp(s)?:\/\//
-    endpoint = SkipEmbedded::InitialSettings["skip_collaboration"]["skip_url"] + endpoint
-  end
 %>
 
 <div id="search">

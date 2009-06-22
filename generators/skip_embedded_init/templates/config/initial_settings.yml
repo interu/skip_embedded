@@ -2,14 +2,8 @@ development:
   skip_collaboration:
     skip_url: "http://localhost:3000/"
     secret_key: change-me
-    fulltext_search:
-      endpoint:  "/search/full_text_search"
-      query_name: "full_text_query"
 
 test:
   skip_collaboration:
     skip_url: "http://test.openskip.org"
     secret_key: "hogehogehogehoge"
-    fulltext_search:
-      endpoint:  "/search/full_text_search"
-      query_name: "full_text_query"
