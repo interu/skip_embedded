@@ -60,7 +60,7 @@ spec = Gem::Specification.new do |s|
   s.require_path      = "lib"
   s.test_files        = Dir["spec/**/*_spec.rb"]
 
-  s.add_dependency "moro-repim", ">=0.1.7"
+  s.add_dependency "openskip-repim", ">=0.1.7"
   s.add_dependency "json"
   s.add_dependency "oauth"
   s.add_dependency 'haml'

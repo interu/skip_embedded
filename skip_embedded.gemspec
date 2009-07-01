@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{skip_embedded}
-  s.version = "0.9.13"
+  s.version = "0.9.14"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["MAEDA Naoki", "MOROHASHI Kyosuke", "MATSUMURA Akihiro"]
-  s.date = %q{2009-06-22}
+  s.date = %q{2009-07-01}
   s.default_executable = %q{skip-gen}
   s.description = %q{Utilities to collabolate SKIP, opensource buisiness SNS.}
   s.email = %q{info@openskip.org}
@@ -25,18 +25,18 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<moro-repim>, [">= 0.1.7"])
+      s.add_runtime_dependency(%q<openskip-repim>, [">= 0.1.7"])
       s.add_runtime_dependency(%q<json>, [">= 0"])
       s.add_runtime_dependency(%q<oauth>, [">= 0"])
       s.add_runtime_dependency(%q<haml>, [">= 0"])
     else
-      s.add_dependency(%q<moro-repim>, [">= 0.1.7"])
+      s.add_dependency(%q<openskip-repim>, [">= 0.1.7"])
       s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<oauth>, [">= 0"])
       s.add_dependency(%q<haml>, [">= 0"])
     end
   else
-    s.add_dependency(%q<moro-repim>, [">= 0.1.7"])
+    s.add_dependency(%q<openskip-repim>, [">= 0.1.7"])
     s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<oauth>, [">= 0"])
     s.add_dependency(%q<haml>, [">= 0"])

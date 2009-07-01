@@ -52,7 +52,7 @@ index a0fb06a..bda6d11 100644
    # config.gem "bj"
    # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
    # config.gem "aws-s3", :lib => "aws/s3"
-+  config.gem 'moro-repim', :lib => 'repim', :source => 'http://gems.github.com/'
++  config.gem 'openskip-repim', :lib => 'repim', :source => 'http://gems.github.com/'
 +  config.gem 'openskip-skip_embedded', :lib => 'skip_embedded', :source => 'http://gems.github.com/'
 +  config.gem 'haml'
  

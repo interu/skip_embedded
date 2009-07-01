@@ -6,5 +6,5 @@ Thread.critical{
 }
 
 config.gem 'gettext', :lib => 'gettext/rails', :version => '1.93.0'
-config.gem 'moro-repim', :lib => 'repim', :version => '>=0.1.4', :soruce => 'http://gems.github.com/'
+config.gem 'openskip-repim', :lib => 'repim', :version => '>=0.1.4', :soruce => 'http://gems.github.com/'
 
