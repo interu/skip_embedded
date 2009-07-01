@@ -15,7 +15,7 @@
     <%= render :partial => "shared/footer" %>
     <%= javascript_include_tag :jquery %>
     <%= javascript_include_tag :skip_embedded, :cache => "skip_embedded" %>
-    <%= javascript_include_tag(URI.join(SkipEmbedded::InitialSettings["skip_collaboration"]["skip_url"], "services/skip_header.js").to_s) if SkipEmbedded::InitialSettings["skip_collaboration"]["skip_url"] %>
+    <%= javascript_include_tag(URI.join(SkipEmbedded::InitialSettings["skip_collaboration"]["skip_url"], "services/skip_reflect_customized.js").to_s) if SkipEmbedded::InitialSettings["skip_collaboration"]["skip_url"] %>
     <%= yield :javascript_includes %>
     <% javascript_tag do -%>
       jQuery(function(){
