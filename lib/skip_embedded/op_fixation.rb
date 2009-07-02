@@ -25,7 +25,11 @@ module SkipEmbedded
     def accept?(claimed_url)
       begin
         _, services = OpenID.discover claimed_url
-        services.any?{|s| @available_servers.include?(s.server_url) }
+        if self.class.sso_enabled?
+          services.any?{|s| @available_servers.include?(s.server_url) }
+        else
+          true
+        end
       rescue OpenID::DiscoveryFailure => why
         ::OpenID::Util.logger.error "FixedOp discovery failed: #{why.message}"
         false
