@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{skip_embedded}
-  s.version = "0.9.17"
+  s.version = "0.9.18"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["MAEDA Naoki", "MOROHASHI Kyosuke", "MATSUMURA Akihiro"]
-  s.date = %q{2009-07-21}
+  s.date = %q{2009-07-31}
   s.default_executable = %q{skip-gen}
   s.description = %q{Utilities to collabolate SKIP, opensource buisiness SNS.}
   s.email = %q{info@openskip.org}
