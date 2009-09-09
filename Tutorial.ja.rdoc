@@ -7,7 +7,7 @@
 
 == また、以下のプラグインにも依存しています。skip_embeddedをインストールすると自動的にインストールされます。
 - openskip-repim-0.1.6
-- moro-open_id_authentication-1.0.0
+- openskip-open_id_authentication-1.0.0
 
 == 新規アプリケーションの作り方
 SKIP Embeddedプラグインを利用して、SKIPと連携するアプリケーションを生成します。
