@@ -2,6 +2,7 @@ module SkipEmbedded
   module Helpers
     include Ui
     include Sprite
+    include Ckeditor
 
     def self.included(base)
       ActionView::Helpers::AssetTagHelper.register_javascript_expansion :jquery => [Dependencies[:jquery]]

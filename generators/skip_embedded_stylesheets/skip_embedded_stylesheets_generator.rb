@@ -7,6 +7,8 @@ class SkipEmbeddedStylesheetsGenerator < Rails::Generator::Base
         public/stylesheets/sass/skip_embedded/skip_footer.sass
         public/stylesheets/sass/skip_embedded/skip_header.sass
         public/stylesheets/sass/skip_embedded/editor_area.sass
+        public/stylesheets/sass/skip_embedded/editor_area_mixin.sass
+        public/stylesheets/sass/skip_embedded/ckeditor_area.sass
         public/stylesheets/skip_embedded/sprites.css
         public/stylesheets/skip_embedded/sprites.png
       ]
